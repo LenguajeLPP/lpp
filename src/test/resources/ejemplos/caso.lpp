@@ -1,0 +1,37 @@
+caracter zona
+cadena[25] nombre
+real ventas , comis , ihss, tp
+
+inicio
+    escriba "Ingresar el nombre del empleado   "
+    lea nombre
+    escriba "Ingresar las ventas  del empleado "
+    lea ventas
+    escriba "Ingresar la zona de trabajo       "
+    lea zona
+
+    caso Zona
+        'a','A' :
+            comis <- 0.06 * ventas
+        'b','B' :
+            comis <- 0.08 * ventas
+        'c','C' :
+            comis <- 0.09 * ventas
+        sino :
+            comis <- 0
+    fin caso
+    si comis > 2400 entonces
+        ihss <- 84
+
+        sino
+            ihss <- 0.035 * comis
+    fin si
+
+    tp <- comis - ihss
+    Escriba " Comsión ganada " , comis
+    llamar nueva_linea
+    Escriba " Segudo Social " , ihss
+    llamar nueva_linea
+    Escriba "Total a pagar " , tp
+    llamar nueva_linea
+fin

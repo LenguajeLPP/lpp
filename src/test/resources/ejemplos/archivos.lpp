@@ -1,0 +1,33 @@
+tipo Arch es archivo secuencial
+
+registro Empleado
+    cadena[50] nombre
+    real sueldo
+    caracter genero
+fin registro
+
+Empleado empleado
+Arch archivoEmpleados
+caracter detener
+
+procedimiento Presentar(Empleado empleado)
+inicio
+    escriba "Nombre del empleado: ", empleado.nombre
+    llamar nueva_linea
+    escriba "Sueldo: ", empleado.sueldo
+    llamar nueva_linea
+    escriba "Genero: ", empleado.genero
+    llamar nueva_linea
+    lea detener
+fin
+
+inicio
+    abrir "empleados.txt" como archivoEmpleados para lectura
+    mientras no fda(archemple) haga
+        leer archivoEmpleados, empleado.nombre
+        leer archivoEmpleados, empleado.sueldo
+        leer archivoEmpleados, empleado.genero
+        llamar Presentar(empleado)
+    fin mientras
+    cerrar archivoEmpleados
+fin

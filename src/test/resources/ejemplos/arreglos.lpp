@@ -1,0 +1,19 @@
+arreglo[5,4] de entero numero
+entero L,C
+
+inicio
+    para L <- 1 hasta 5 haga
+        para C <- 1 hasta 4 haga
+            Escriba "Numero[", L, ",", C, "]"
+            lea numero[L,C]
+        Fin Para
+    Fin Para
+    llamar Limpiar_pantalla
+
+    para L <- 1 hasta 5 haga
+        para C <- 1 hasta 4 haga
+            Escriba numero[L,C], " "
+        Fin Para
+        llamar nueva_linea
+    Fin Para
+fin
