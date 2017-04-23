@@ -1,0 +1,29 @@
+tipo TArch es archivo de entero
+
+TArch hFile
+TArch hFile2
+
+entero val
+
+inicio
+	abrir "c:\test.bin" como hFile para lectura
+	
+	//llamar ir_a_Fin(hFile)
+	
+	leer hFile, val
+	escriba val
+	
+	leer hFile, val
+	escriba val
+	
+	leer hFile, val
+	escriba val
+	
+	leer hFile, val
+	escriba val
+	
+	leer hFile, val
+	escriba val
+	
+	cerrar hFile
+fin 

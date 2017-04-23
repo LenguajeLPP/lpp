@@ -1,0 +1,20 @@
+Real r1, r2, r3
+Cadena[255] Mensaje
+
+Inicio
+	Escriba "Valor de r1: "
+	Lea r1
+	Escriba "Valor de r2: "
+	Lea r2
+	
+	r3 <- r1 + r2
+	
+	Escriba r3
+	Llamar Nueva_Linea()
+	
+	Mensaje <- "La suma total es " + Real_A_Cadena( r3, 2 ) + " ..."
+	
+	Escriba Mensaje
+	
+	Llamar Obtener_Caracter()
+Fin

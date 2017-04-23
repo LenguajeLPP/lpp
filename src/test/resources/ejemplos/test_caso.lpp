@@ -1,0 +1,26 @@
+Entero dia, mes, anio
+
+inicio
+    lea mes
+    
+    caso mes    // Solo valores enteros ---variables enteras 
+    	1, 3, 5, 7, 8, 10, 12	: 
+    								escriba "Caso 1, 3, 5, 7, 8, 10, 12"
+    								llamar Nueva_Linea()
+    								escriba "Es un mes de 31 dias"
+    								
+		4,6,9,11				: 	
+									escriba "Caso 4, 6, 9, 11"
+    								llamar Nueva_Linea()
+									escriba "Es un mes de 30 dias "
+									
+		2						:	
+									escriba "Caso 2"
+    								llamar Nueva_Linea()
+									escriba " es feb."
+   
+          sino : escriba "No es un mes valido"      // DEFAULT EL CUAL PUEDE SER OPCIONAL
+  
+    fin caso
+
+ fin

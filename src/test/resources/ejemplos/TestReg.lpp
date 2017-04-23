@@ -1,0 +1,67 @@
+tipo TArr es arreglo[3, 5] de entero
+tipo TArrUni es arreglo[10] de entero
+tipo TArr_Arr es arreglo[3] de arreglo[5] de entero
+
+registro TRec1
+	entero a, b
+fin registro
+
+registro TRec
+	entero a, b
+	TArr arr
+	TArrUni arr_uni
+	TArr_Arr arr_arr
+	TRec1 reg2
+fin registro
+
+TRec x, yy
+entero i, j
+booleano bFound
+cadena[30] mi_cadena
+TArr mi_arr
+
+inicio
+	x.a <- 10
+	x.b <- 20
+	x.reg2.a <- 30
+	x.reg2.b <- 40
+	
+	yy <- x
+	
+	bFound <- verdadero
+	
+	mientras bFound haga
+		escriba "Escriba un valor : "
+		lea i
+		si i > 10 entonces
+			bFound <- falso
+		fin si
+	fin mientras
+	
+	para i <- 1 hasta 3 haga
+		para j <- 1 hasta 5 haga
+			x.arr[i, j] <- j
+		fin para
+	fin para
+	llamar Nueva_Linea()
+	para i <- 1 hasta 3 haga
+		para j <- 1 hasta 5 haga
+			x.arr_arr[i][j] <- j
+		fin para
+	fin para
+	
+	para i <- 1 hasta 10 haga
+		x.arr_uni[i] <- i
+	fin para
+	
+	mi_arr <- x.arr
+	
+	para i <- 1 hasta 3 haga
+		//llamar limpiar_pantalla()
+		para j <- 1 hasta 5 haga
+			escriba x.arr[i, j]
+		fin para
+		
+		llamar Nueva_Linea()
+	fin para
+fin

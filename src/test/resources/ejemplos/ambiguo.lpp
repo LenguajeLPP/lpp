@@ -1,0 +1,19 @@
+entero a, b
+inicio
+   a<-3
+   b<-1
+  si a=3 
+  entonces  // < -------------- SI PRINCIPAL
+            // ------------------------------------------------
+            si b=2
+            entonces  // Si SECUNDARIO 
+                   escriba "hola"
+               sino
+                     escriba "DDDDD"
+             fin si  // < ----------- FIN DEL SI SECUNDARIO
+           // --------------------------------------------
+    sino    // <------------------Este sino es del SI PRINCIPAL
+         escriba "FFFFF"
+  fin si
+
+fin

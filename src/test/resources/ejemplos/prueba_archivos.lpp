@@ -1,0 +1,75 @@
+/*Programa de Prueba de Archivos*/
+
+Registro TAlumno
+	Entero Cuenta
+	Cadena[50] Nombre
+Fin Registro
+
+Tipo TArch es Archivo de TAlumno
+
+TArch arch
+Entero opcion
+
+Procedimiento Ingresar
+	TAlumno alum
+Inicio
+	Llamar Limpiar_Pantalla()
+	Escriba "Ingrese cuenta : "
+	Lea alum.cuenta
+	Escriba "Ingrese nombre : "
+	Lea alum.nombre
+	
+	Llamar Ir_a_Fin(arch)
+	Escribir arch, alum
+Fin
+
+Procedimiento Listar
+	TAlumno alum
+	Entero Linea
+	Caracter ch
+Inicio
+	Llamar Limpiar_Pantalla()
+	Llamar Ir_A_Inicio(arch)
+	
+	Llamar Posicionar_Cursor(10, 5)
+	Escriba "Cuenta"
+	Llamar Posicionar_Cursor(20, 5)
+	Escriba "Nombre"
+	Linea <- 6
+	Mientras No FDA(arch) Haga
+		Leer arch, alum
+		Llamar Posicionar_Cursor(10, Linea)
+		Escriba alum.cuenta
+		Llamar Posicionar_Cursor(20, Linea)
+		Escriba alum.nombre
+		Linea <- Linea + 1
+	Fin Mientras
+	ch <- Obtener_Caracter()
+Fin
+
+Inicio
+	Abrir "c:\alumnos.bin" Como arch Para Lectura, Escritura
+	Repita
+		Llamar Limpiar_Pantalla()
+		Llamar Posicionar_Cursor(10, 1)
+		Escriba "Prueba de Manejo de Archivos Binarios"
+		Llamar Posicionar_Cursor(10, 5)
+		Escriba "1.-Ingreso de Datos"
+		Llamar Posicionar_Cursor(10, 6)
+		Escriba "2.-Listar datos"
+		Llamar Posicionar_Cursor(10, 7)
+		Escriba "3.-Salir"
+		Llamar Posicionar_Cursor(10, 9)
+		Escriba "Elija una opcion : "
+		Lea Opcion
+		Caso Opcion
+			1 : 
+				Llamar Ingresar()
+			2:
+				Llamar Listar()
+		Fin Caso
+	Hasta Opcion = 3
+	Cerrar arch
+Fin
+		
+		

@@ -1,0 +1,31 @@
+registro TEmp
+	entero code
+	cadena[50] name
+	real sueldo
+	caracter sexo
+	booleano activo
+fin registro
+
+tipo TArch es archivo de TEmp
+
+TArch hFile
+TEmp emp
+
+inicio
+
+	emp.code <- 2011040
+	emp.name <- "Elvin Joel Deras"
+	emp.sueldo <- 10500
+	emp.sexo <- 'M'
+	emp.activo <- verdadero
+
+	abrir "c:\prueba2.bin" como hFile para lectura, escritura
+	
+	llamar ir_a_fin (hFile)
+	
+	/*ir a hFile, 3*/
+	
+	escribir hFile, emp
+	
+	cerrar hFile
+fin 

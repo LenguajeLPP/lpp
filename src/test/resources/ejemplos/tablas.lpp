@@ -1,0 +1,19 @@
+real n1, n2
+
+procedimiento tabla(real n1, entero e2)
+	entero i
+inicio
+
+	para i<-1 hasta e2 haga
+		escriba n1,"*",i,"=",n1*i
+		llamar nueva_linea
+	fin para
+fin
+
+inicio
+	Escriba "n1: "
+	lea n1
+	Escriba "n2: "
+	lea n2
+	llamar tabla(n1,n2)
+fin

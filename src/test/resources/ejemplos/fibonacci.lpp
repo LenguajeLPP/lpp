@@ -1,0 +1,17 @@
+entero n
+
+funcion fibonacci(entero n):entero
+inicio
+	si (n=0) o (n=1) entonces
+		retorne 1
+	sino
+		retorne fibonacci(n-1) + fibonacci(n-2)
+	fin si
+fin
+
+inicio
+	Escriba "Escriba un entero : "
+	lea n
+	
+	Escriba "Fibonacci ", n, " es ", fibonacci(n)
+fin

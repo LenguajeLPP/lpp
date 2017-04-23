@@ -1,0 +1,12 @@
+Entero a, b
+Real r1, r2
+
+Inicio
+	Llamar Msg( 123, 456 )
+	Llamar Msg_Real( 123.45677, 456.789 )
+	
+	a <- 12345
+	b <- 465456
+	
+	Llamar Msg(a, b)
+Fin

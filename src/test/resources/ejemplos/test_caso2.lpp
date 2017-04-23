@@ -1,0 +1,21 @@
+entero i, j, linea, col
+caracter ch
+cadena[30] string
+
+inicio
+	string <- "Prueba de cadenas"
+	string[7] <- '_'
+	string[10] <- '_'
+	
+	Escriba string, valor_ascii(' ')
+	ch <- obtener_caracter()
+	para i <- 1 hasta longitud(string) haga
+		caso string[i]
+			'a', 'e', 'i', 'o', 'u' : 
+										string[i] <- car(valor_ascii(string[i])-32)
+			sino:
+		fin caso
+	fin para
+	
+	escriba string
+fin

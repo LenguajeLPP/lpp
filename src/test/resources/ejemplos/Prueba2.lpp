@@ -1,0 +1,17 @@
+Entero a, b, c
+Cadena[50] Mensaje
+
+Inicio
+	Escriba "Valor de a: "
+	Lea a
+	Escriba "Valor de b: "
+	Lea b
+	
+	c <- a + b
+	
+	Mensaje <- "La suma total es " + Entero_A_Cadena( c ) + " ..."
+	
+	Escriba Mensaje
+	
+	Llamar Obtener_Caracter()
+Fin

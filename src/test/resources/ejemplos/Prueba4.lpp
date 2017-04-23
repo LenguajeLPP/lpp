@@ -1,0 +1,29 @@
+Entero x, tecla
+Booleano b
+Caracter ch
+
+Inicio
+	Escriba "Esperando por una tecla ..."
+	
+	Llamar Nueva_Linea
+	
+	Repita
+	Hasta tecla_presionada()
+	
+	Escriba "Saliendo del ciclo ..."
+	
+	Llamar Nueva_Linea
+	
+	//ch <- Obtener_Caracter()
+	/*tecla <- Obtener_Tecla()
+	Escriba "Valor de tecla ", tecla*/
+	ch <- Obtener_Caracter()
+	x <- Valor_Ascii(ch)
+	si x = 0 entonces
+		Escriba "Tecla Especial ..."
+		Llamar Nueva_Linea
+		ch <- Obtener_Caracter()
+		x <- Valor_Ascii(ch)
+	fin si
+	Escriba "Caracter es: ", ch, " Valor Ascii es: ", x, " : ", Caracter_Ascii(x)
+Fin

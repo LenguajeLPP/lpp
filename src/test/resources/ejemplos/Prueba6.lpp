@@ -1,0 +1,21 @@
+Cadena strMayus, strMinus
+Caracter ch, chNewLine
+Entero i
+
+Inicio
+	strMayus <- ""
+	strMinus <- ""
+	chNewLine <- Caracter_Ascii(10)
+	para i <- 65 hasta 90 haga	
+		ch <- Caracter_Ascii(i)
+		strMayus <- ch + strMayus + ch
+	fin para
+	
+	para i <- 97 hasta 122 haga	
+		ch <- Caracter_Ascii(i)
+		strMinus <- ch + strMinus + ch
+	fin para
+	
+	Escriba "Letras mayusculas : ", strMayus, chNewLine
+	Escriba "Letras Minusculas : ", strMinus, chNewLine
+Fin

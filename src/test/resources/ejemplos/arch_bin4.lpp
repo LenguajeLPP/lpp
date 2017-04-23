@@ -1,0 +1,32 @@
+registro TEmp
+	entero code
+	cadena[50] name
+	real sueldo
+	caracter sexo
+	booleano activo
+fin registro
+
+tipo TArch es archivo de TEmp
+
+TArch arch
+TEmp emp
+
+inicio
+
+	abrir "c:\prueba2.bin" como arch para lectura
+	
+	llamar ir_a (arch, 1)
+	
+	mientras no fda(arch) haga
+		leer arch, emp
+		
+		Escriba posicion_actual(arch)
+		llamar nueva_linea()
+		
+		Escriba emp.code, " ", emp.name, " ", emp.sueldo, " ", emp.sexo, " ", emp.activo
+		llamar nueva_linea()
+
+	fin mientras
+	
+	cerrar arch
+fin

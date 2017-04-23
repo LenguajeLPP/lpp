@@ -1,0 +1,46 @@
+/*Programa de Prueba*/
+
+Entero opcion, num1, num2
+Caracter ch
+
+Procedimiento Menu (var Entero Opcion)
+Inicio
+	Llamar Limpiar_Pantalla()
+	Llamar Posicionar_Cursor(1, 2)
+	Escriba "1. Suma"
+	Llamar Posicionar_Cursor(1, 3)
+	Escriba "2. Resta"
+	Llamar Posicionar_Cursor(1, 4)
+	Escriba "3. Salir"
+	Llamar Posicionar_Cursor(1, 6)
+	Escriba "Elija su opcion :"
+	Lea opcion
+Fin
+
+Inicio
+	Repita
+		Llamar Menu(opcion)
+		caso opcion
+			1:
+				Llamar Limpiar_Pantalla()
+				Llamar Posicionar_Cursor(1, 2)
+				Escriba "Numero 1 :"
+				Lea num1
+				Llamar Posicionar_Cursor(1, 3)
+				Escriba "Numero 2 :"
+				Lea num2
+				Escriba "La suma es : ", num1 + num2
+				ch <- Obtener_Caracter()
+			2:
+				Llamar Limpiar_Pantalla()
+				Llamar Posicionar_Cursor(1, 2)
+				Escriba "Numero 1 :"
+				Lea num1
+				Llamar Posicionar_Cursor(1, 3)
+				Escriba "Numero 2 :"
+				Lea num2
+				Escriba "La resta es : ", num1 - num2
+				ch <- Obtener_Caracter()
+		fin caso
+	Hasta opcion=3
+Fin

@@ -1,0 +1,37 @@
+tipo TArch es archivo secuencial
+
+registro TEmp
+	entero code
+	cadena[50] name
+	real sueldo
+	caracter sexo
+	booleano activo
+fin registro
+
+TEmp emp
+TArch hFile
+
+inicio
+	
+		emp.code <- 977183
+		emp.name <- "Ivan de Jesus Deras Tabora"
+		emp.sueldo <- 9000
+		emp.sexo <- 'M'
+		emp.activo <- verdadero
+		abrir "c:\emp.txt" como hFile para escritura
+		
+		//llamar ir_a_fin (hFile)
+		
+		escriba emp.code, " ", emp.name, " ", emp.sueldo, " ", emp.sexo, " ", emp.activo
+		
+		escribir hFile, emp.code
+		escribir hFile, emp.name
+		escribir hFile, emp.sueldo
+		escribir hFile, emp.sexo
+		escribir hFile, emp.activo
+		
+		
+		cerrar hFile
+fin
+
+	

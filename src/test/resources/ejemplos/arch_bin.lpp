@@ -1,0 +1,25 @@
+Registro TReg
+	Entero Cuenta
+	Entero Camp
+	Cadena[10] Test
+Fin Registro
+	
+tipo TArch es archivo de TReg
+
+TArch hFile
+TReg reg
+Entero i
+
+inicio
+	abrir "c:\arch.bin" como hFile para lectura
+	
+	llamar Ir_a_Inicio(hFile)
+	Para i <- 0 Hasta 30 Haga
+		leer hFile, reg
+		
+		Escriba reg.cuenta
+		Llamar nueva_linea
+	Fin Para
+	
+	cerrar hFile
+fin 

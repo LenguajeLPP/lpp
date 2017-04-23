@@ -1,0 +1,13 @@
+cadena[20] str1
+cadena[50] str2
+cadena[35] str3
+
+inicio
+	str1 <- "Esto es"
+	str2 <- str1 + " una prueba de cadenas " + " Mas Texto 1 " + " Mas Texto 2 " + " Mas Texto 3 " + " Mas Texto 4 "
+	Escriba str2
+	llamar Nueva_Linea()
+	Escriba "Introdusca una cadena : "
+	Lea str3
+	Escriba str3
+fin

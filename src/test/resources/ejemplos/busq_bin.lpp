@@ -1,0 +1,92 @@
+/*Programa para implementar la busqueda binaria en una arreglo de Enteros*/
+
+tipo TArreglo_Entero es Arreglo [20] de Entero
+
+TArreglo_Entero arr
+Entero i, pos
+Caracter ch
+
+Procedimiento intercambiar(var Entero a, var Entero b)
+	Entero tmp
+Inicio
+	tmp <- a
+	a <- b
+	b <- tmp
+Fin
+
+Procedimiento pivote(var TArreglo_Entero T, Entero i, Entero j, var Entero l)
+	Entero p, k
+Inicio
+	p <- T[i]
+	k <- i
+	l <- j + 1
+	Repita
+		k <- k + 1
+	Hasta (T[k] > p) o (k >= j)
+	
+	Repita
+		l <- l - 1
+	Hasta T[l] <= p
+	
+	mientras k < l haga
+		Llamar intercambiar(T[k], T[l])
+		Repita
+		k <- k + 1
+		Hasta T[k] > p
+		Repita
+			l <- l - 1
+		Hasta T[l] <= p
+	fin mientras
+	Llamar intercambiar(T[i], T[l])
+Fin
+
+Procedimiento qsort(var TArreglo_Entero T, Entero i, Entero j)
+	Entero l
+Inicio
+	si i < j entonces
+		Llamar pivote(T, i, j, l)
+		Llamar qsort(T, i, l-1)
+		Llamar qsort(T, l+1, j)
+	fin si
+Fin
+
+Funcion Busqueda_Binaria(TArreglo_Entero arr, Entero val, Entero st, Entero end) : Entero
+	Entero med
+Inicio
+	si st > end entonces
+		retorne -1
+	fin si
+	med <- (st + end) div 2
+	si arr[med] = val entonces
+		retorne med
+	sino
+		si arr[med] > val entonces
+			retorne Busqueda_Binaria(arr, val, st, med - 1)
+		sino 
+			retorne Busqueda_Binaria(arr, val, med + 1, end)
+		fin si
+	fin si
+Fin
+
+Inicio
+	Llamar Inicializar_Aleatorio()
+	
+	Llamar limpiar_pantalla()
+	para i <- 1 hasta 20 haga
+		arr[i] <- Aleatorio() * 50 + 1
+		Escriba arr[i]
+		Llamar Nueva_Linea()
+	fin para
+	ch <- Obtener_Caracter()
+	 
+	Llamar qsort(arr, 1, 20)
+	
+	llamar Limpiar_Pantalla()
+	para i <- 1 hasta 20 haga
+		Escriba arr[i]
+		Llamar Nueva_Linea()
+	fin para
+	ch <- Obtener_Caracter()
+	
+	Escriba Busqueda_Binaria(arr, arr[5], 1, 20)
+Fin

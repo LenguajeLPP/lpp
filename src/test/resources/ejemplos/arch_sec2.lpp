@@ -1,0 +1,42 @@
+tipo TArch es archivo secuencial
+
+registro TEmp
+	entero code
+	cadena[50] name
+	real sueldo
+	cadena[1] sexo
+	booleano activo
+fin registro
+
+TEmp emp
+TArch hFile
+
+inicio
+	
+		/*emp.code = 977183
+		emp.name = "Ivan de Jesus Deras Tabora"
+		emp.sueldo = 9500.74
+		emp.sexo = "M"
+		emp.activo = verdadero*/
+		
+		abrir "c:\emp.txt" como hFile para lectura
+		
+		/*ir_a_fin hFile*/
+		
+		leer hFile, emp.code
+		leer hFile, emp.name
+		leer hFile, emp.sueldo
+		leer hFile, emp.sexo
+		leer hFile, emp.activo
+		
+		escriba emp.code, " ", emp.name, " ", emp.sueldo, " ", emp.sexo, " ", emp.activo
+		
+		leer hFile, emp.code
+		leer hFile, emp.name
+		leer hFile, emp.sueldo
+		leer hFile, emp.sexo
+		leer hFile, emp.activo
+		escriba emp.code, " ", emp.name, " ", emp.sueldo, " ", emp.sexo, " ", emp.activo
+		
+		cerrar hFile
+fin

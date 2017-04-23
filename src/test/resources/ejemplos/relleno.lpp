@@ -1,0 +1,36 @@
+entero i, j, linea, col
+caracter ch
+
+inicio
+	para i <- 32 hasta 67 haga
+		escriba valor_ascii(caracter_ascii(i))
+		llamar nueva_linea()
+	fin para
+
+	ch <- obtener_caracter()
+	para linea <- 1 hasta 25 haga
+		para col <- 1 hasta 80 haga
+			llamar posicionar_cursor(col, linea)
+			escriba "A"
+		fin para
+	fin para
+	
+	llamar limpiar_pantalla() //Limpiar la pantalla
+	
+	//Prueba de los colores de texto
+	para i <- 0 hasta 15 haga
+		llamar color_texto(i) //Setear el color del texto
+		escriba "Color: ", i
+		llamar nueva_linea()
+		ch <- obtener_caracter()
+		escriba valor_ascii(ch)
+		llamar nueva_linea
+	fin para
+	
+	//Prueba de los colores de fondo
+	para i <- 0 hasta 15 haga
+		llamar color_fondo(i) //Seteamos el color de fondo
+		ch <- obtener_caracter()
+		llamar limpiar_pantalla()
+	fin para
+fin

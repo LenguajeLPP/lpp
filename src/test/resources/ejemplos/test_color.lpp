@@ -1,0 +1,12 @@
+Entero i
+Caracter tec
+
+Inicio	
+	para i <- 1 hasta 16 haga
+		Llamar Color_Texto( i )
+		Llamar Color_Fondo( i + 1 )
+		Llamar Limpiar_Pantalla()
+		Escriba "Este es texto en color de fondo ", i + 1, " y color de texto ", i
+		tec <- Obtener_Caracter()
+	fin para
+Fin

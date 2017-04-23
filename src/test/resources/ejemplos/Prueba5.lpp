@@ -1,0 +1,21 @@
+/*Una forma mas eficiente de realizar un relleno*/
+Cadena strRelleno, strLinea, strLinea2, NewLine
+Caracter ch
+Entero i
+
+Inicio
+	strLinea <- "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+	strLinea2 <- "AAAAAAAAAA"
+	ch <- strLinea2
+	Escriba "Valor de ch es ", ch
+	Llamar Pausa(1000)
+	strRelleno <- ""
+	Para i <- 1 Hasta 24 Haga
+		//strRelleno <- strRelleno + strLinea + Caracter_Ascii(10)
+		NewLine <- Caracter_Ascii(10)
+		strRelleno <- strRelleno + strLinea2 + NewLine
+	Fin Para
+	strRelleno <- strRelleno + strLinea2
+	Llamar Posicionar_cursor(1, 1)
+	Escriba strRelleno
+Fin

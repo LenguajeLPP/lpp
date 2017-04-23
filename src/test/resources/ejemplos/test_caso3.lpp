@@ -1,0 +1,18 @@
+Entero x
+
+Inicio
+	Escriba "Intro x "
+	Lea x
+	Escriba 1/3
+	
+	caso x
+		1->5, 10->15 : 
+			Escriba "Valor entre 1 y 5 o 10 y 15"
+		6, 7:
+			Escriba "Valor es 6 o 7"
+		8, 9:
+			Escriba "Valor es 8 o 9"
+	fin caso
+	Lea x
+Fin
+		

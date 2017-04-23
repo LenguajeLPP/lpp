@@ -1,0 +1,18 @@
+entero n
+
+procedimiento genera_error(entero n)
+	entero a, b, c
+inicio
+	a <- n+1
+	b <- n+2
+	c <- n+3
+	Escriba "Llamada :", n
+	llamar nueva_linea()
+	llamar genera_error(n+1)
+fin
+
+inicio
+
+	Escriba "Comienza programa que genera error : "
+	llamar genera_error(0)
+fin
