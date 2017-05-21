@@ -324,14 +324,18 @@ OP_O : O ;
 NO : N O ;
 
 // LITERALES
-LITERAL_REAL : [0-9]+ '.' [0-9]+ ;
-LITERAL_ENTERO : [0-9]+ ;
+LITERAL_REAL : DIGITO+ '.' DIGITO*
+    |                   '.' DIGITO+
+    ;
+LITERAL_ENTERO : DIGITO+ ;
+fragment
+DIGITO : [0-9] ;
 LITERAL_CADENA : '"' CARACTERES_CADENA* '"' ;
 fragment
-CARACTERES_CADENA : ~["] | '\\"' ;
+CARACTERES_CADENA : ~["] | '\\"' | '\\\\' ;
 LITERAL_CARACTER : '\'' CARACTERES_CARACTER '\'' ;
 fragment
-CARACTERES_CARACTER : ~['] | '\\\'' ;
+CARACTERES_CARACTER : ~['] | '\\\'' | '\\\\' ;
 VERDADERO : V E R D A D E R O ;
 FALSO : F A L S O ;
 
