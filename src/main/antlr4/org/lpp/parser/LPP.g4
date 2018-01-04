@@ -22,18 +22,18 @@ declaracionesSubprogramas
     ;
 
 declaracionProcedimiento
-    : PROCEDIMIENTO ID ( '(' argumentos ')' )? NL+ declaracionesVariables sentenciasSubprograma
+    : PROCEDIMIENTO ID ( '(' parametros ')' )? NL+ declaracionesVariables sentenciasSubprograma
     ;
 
 declaracionFuncion
-    : FUNCION ID ( '(' argumentos ')' )? ':' tipo NL+ declaracionesVariables sentenciasSubprograma
+    : FUNCION ID ( '(' parametros ')' )? ':' tipo NL+ declaracionesVariables sentenciasSubprograma
     ;
 
-argumentos
-    : argumento ( ',' argumento )*
+parametros
+    : parametro ( ',' parametro )*
     ;
 
-argumento
+parametro
     : VAR? tipo ID
     ;
 
@@ -135,18 +135,18 @@ sino
     ;
 
 caso
-    : CASO expr NL+ casoOpciones+ casoSino? FIN CASO NL+
+    : CASO expr NL+ opcionCaso+ casoSino? FIN CASO NL+
     ;
 
-casoOpciones
-    : listaOpciones ':' NL+ sentencias
+opcionCaso
+    : listaExprOpcion ':' NL+ sentencias
     ;
 
-listaOpciones
-    : opcion ( ',' opcion ) *
+listaExprOpcion
+    : exprOpcion ( ',' exprOpcion ) *
     ;
 
-opcion
+exprOpcion
     : rangoExpr
     | expr
     ;
@@ -176,7 +176,7 @@ retorne
     ;
 
 abrir
-    : ABRIR expr COMO ID PARA acceso NL+
+    : ABRIR expr COMO expr PARA acceso NL+
     ;
 
 acceso
@@ -185,15 +185,15 @@ acceso
     ;
 
 cerrar
-    : CERRAR ID NL+
+    : CERRAR expr NL+
     ;
 
 escribir
-    : ESCRIBIR listaExpr NL+
+    : ESCRIBIR expr ',' listaExpr NL+
     ;
 
 leer
-    : LEER listaExpr NL+
+    : LEER expr ',' listaExpr NL+
     ;
 
 listaExpr
@@ -210,7 +210,7 @@ expr
     | ID '(' listaExpr? ')'
     | '-' expr
     | NO expr
-    | expr '^'<assoc=right> expr
+    |<assoc=right> expr '^' expr
     | expr ( '*' | '/' | DIV_ENTEROS | MOD ) expr
     | expr ( '+' | '-' ) expr
     | expr ( '=' | '<>' | '<=' | '>=' | '<' | '>' ) expr
@@ -307,6 +307,7 @@ FUNC_CARACTER_ASCII : C A R A C T E R '_' A S C I I ;
 FUNC_LONGITUD : L O N G I T U D ;
 
 // OPERADORES
+PODER : '^';
 MULT : '*' ;
 DIV : '/' ;
 MOD : M O D ;
